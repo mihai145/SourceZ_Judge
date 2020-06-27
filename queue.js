@@ -102,11 +102,10 @@ async function processLineByLine(submId) {
 function Evaluate(subm) {
     const author = subm.author;
     const pb = subm.toProblem;
+    
+    console.log("HIT " + author + " " + pb);
+
     const cpp = subm.cpp;
-
-    console.log(author);
-    console.log(pb);
-
     fs.writeFileSync("D:/CutePetProject/CheckerEnv/Checker/current.txt", cpp, "utf8");
     
     const commandString = "sh D:/CutePetProject/CheckerEnv/Checker/check.sh " + pb;

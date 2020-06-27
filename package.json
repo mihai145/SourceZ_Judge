@@ -1,7 +1,7 @@
 {
-  "name": "cutepetprojectqueue",
+  "name": "sourcez_queue",
   "version": "1.0.0",
-  "description": "",
+  "description": "task queuer for competitive programming platform",
   "main": "queue.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
