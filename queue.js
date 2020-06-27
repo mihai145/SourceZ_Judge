@@ -11,7 +11,7 @@ const readline = require('readline');
 ///-----------------------///
 ///DATABASE SETUP
 ///-----------------------///
-mongoose.connect('mongodb://localhost/cute_pet_project', {
+mongoose.connect(process.env.DB_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useFindAndModify: false
