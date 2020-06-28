@@ -18,7 +18,7 @@ mongoose.connect(process.env.DB_URI, {
 });
 
 async function processLineByLine(submId) {
-    const fileStream = fs.createReadStream("D:/CutePetProject/CheckerEnv/Checker/results.txt");
+    const fileStream = fs.createReadStream("D:/SourceZ_Judge/CheckerEnv/Checker/results.txt");
 
     const rl = readline.createInterface({
         input: fileStream,
@@ -58,7 +58,7 @@ async function processLineByLine(submId) {
         verdict = "Compilation Error";
     }
 
-    let compilerMessage = fs.readFileSync('D:/CutePetProject/CheckerEnv/Checker/compilation.txt', "utf8");
+    let compilerMessage = fs.readFileSync('D:/SourceZ_Judge/CheckerEnv/Checker/compilation.txt', "utf8");
 
     Submission.findByIdAndUpdate(submId, { judged: true, compilerMessage: compilerMessage, results: res, verdict: verdict }, (err, subm) => {
         if (err || !subm) {
@@ -106,9 +106,9 @@ function Evaluate(subm) {
     console.log("HIT " + author + " " + pb);
 
     const cpp = subm.cpp;
-    fs.writeFileSync("D:/CutePetProject/CheckerEnv/Checker/current.txt", cpp, "utf8");
+    fs.writeFileSync("D:/SourceZ_Judge/CheckerEnv/Checker/current.txt", cpp, "utf8");
     
-    const commandString = "sh D:/CutePetProject/CheckerEnv/Checker/check.sh " + pb;
+    const commandString = "sh D:/SourceZ_Judge/CheckerEnv/Checker/check.sh " + pb;
 
     shell.exec(commandString);
 
