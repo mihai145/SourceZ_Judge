@@ -30,11 +30,16 @@ async function processLineByLine(submId) {
     let res = [];
     let verdict = "Accepted";
 
+    let tests = 0, passed = 0, scr = 0;
+
     for await (const line of rl) {
         // Each line in input.txt will be successively available here as `line`.
         // console.log(`Line from file: ${line}`);
-
+        
+        tests++;
+        
         if (line === "0") {
+            passed++;
             res.push("Correct");
         } else if (line === "1") {
             res.push("Wrong answer");
@@ -56,43 +61,50 @@ async function processLineByLine(submId) {
 
     if (res.length === 0) {
         verdict = "Compilation Error";
+    } else {
+        scr = (passed * 100) / tests;
     }
 
     let compilerMessage = fs.readFileSync('D:/SourceZ_Judge/CheckerEnv/Checker/compilation.txt', "utf8");
 
-    Submission.findByIdAndUpdate(submId, { judged: true, compilerMessage: compilerMessage, results: res, verdict: verdict }, (err, subm) => {
+    console.log("TESTS: " + tests);
+    console.log("PASSED: " + passed);
+    console.log("SCORE: " + scr);
+
+    Submission.findByIdAndUpdate(submId, { judged: true, compilerMessage: compilerMessage, results: res, verdict: verdict, score: scr}, (err, subm) => {
         if (err || !subm) {
             console.log(err);
         } else {
 
-            if (verdict === "Accepted") {
-                User.findOne({ username: subm.author }, (err, user) => {
-                    if (err || !user) {
-                        ///nothing to worry really
+            if(verdict === "Accepted") {
+                Problem.findOne({name: subm.toProblem}, (err, pb) => {
+                    pb.totalSubmissions += 1;
+                    pb.acceptedSubmissions += 1;
+                    pb.save();
+                });
+                User.findOne({username: subm.author}, (err, user) => {
+                    if(err || !user) {
+                        ///nothing to worry
                     } else {
-                        let alreadySolved = false;
+                        let solved = false;
 
-                        for (const pb of user.solvedProblems)
-                            if (pb === subm.toProblem) {
-                                alreadySolved = true;
-                                break;
+                        for (let pb of user.solvedProblems) {
+                            if(pb == subm.toProblem) {
+                                solved = true;
                             }
+                        }
 
-                        if (!alreadySolved) {
+                        if(!solved) {
+                            user.rating += 100;
                             user.solvedProblems.push(subm.toProblem);
-                            user.rating = user.rating + 100;
                             user.save();
-
-                            Problem.findOne({ name: subm.toProblem }, (err, prob) => {
-                                if (err || !prob) {
-                                    ///nothing to worry really
-                                } else {
-                                    prob.solvedBy = prob.solvedBy + 1;
-                                    prob.save();
-                                }
-                            });
                         }
                     }
+                });
+            } else {
+                Problem.findOne({name: subm.toProblem}, (err, pb) => {
+                    pb.totalSubmissions += 1;
+                    pb.save();
                 });
             }
         }
@@ -124,4 +136,4 @@ setInterval(() => {
             Evaluate(sb);
         }
     });
-}, 5000);
+}, 20000);
