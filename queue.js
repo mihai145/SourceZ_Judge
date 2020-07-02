@@ -8,6 +8,8 @@ const shell = require("shelljs");
 const fs = require("fs");
 const readline = require('readline');
 
+let judging = false;
+
 ///-----------------------///
 ///DATABASE SETUP
 ///-----------------------///
@@ -74,6 +76,7 @@ async function processLineByLine(submId) {
     Submission.findByIdAndUpdate(submId, { judged: true, compilerMessage: compilerMessage, results: res, verdict: verdict, score: scr}, (err, subm) => {
         if (err || !subm) {
             console.log(err);
+            judging = false;
         } else {
 
             if(verdict === "Accepted") {
@@ -85,6 +88,7 @@ async function processLineByLine(submId) {
                 User.findOne({username: subm.author}, (err, user) => {
                     if(err || !user) {
                         ///nothing to worry
+                        judging = false;
                     } else {
                         let solved = false;
 
@@ -99,6 +103,8 @@ async function processLineByLine(submId) {
                             user.solvedProblems.push(subm.toProblem);
                             user.save();
                         }
+
+                        judging = false;
                     }
                 });
             } else {
@@ -106,6 +112,8 @@ async function processLineByLine(submId) {
                     pb.totalSubmissions += 1;
                     pb.save();
                 });
+
+                judging = false;
             }
         }
     });
@@ -129,11 +137,17 @@ function Evaluate(subm) {
 
 setInterval(() => {
     console.log("Started interval");
-    Submission.findOne({ judged: false }).sort({ created: 1 }).exec((err, sb) => {
-        if (err || !sb) {
-            console.log("No hit");
-        } else {
-            Evaluate(sb);
-        }
-    });
-}, 20000);
+
+    if(judging === true) {
+        console.log("Busy");
+    } else {
+        Submission.findOne({ judged: false }).sort({ created: 1 }).exec((err, sb) => {
+            if (err || !sb) {
+                console.log("No hit");
+            } else {
+                judging = true;
+                Evaluate(sb);
+            }
+        });
+    }
+}, 3000);
