@@ -94,6 +94,7 @@
 
     <hr>
 
+<div class="d-none d-md-block"> 
     <h3 class="mt-3">Exemplu</h3>
         <table class="table table-bordered" style="text-align: left">
             <thead>
@@ -223,6 +224,6 @@ Evolutia intre concursurile 3 si 4 era si ea mai slaba, dar e dupa ziua 9.
 		</tr>
             </tbody>
             </table>
-    
 
 <img src="https://cdn.discordapp.com/attachments/721378343685062686/728320873378873436/chart_crop.png" class="img-fluid my-4">
+</div>
