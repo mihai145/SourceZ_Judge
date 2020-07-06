@@ -17,7 +17,7 @@ echo "Start checking client code for problem ${pb}!"
 cat ./current.txt >> ./main.cpp
 echo "Created main.cpp from client submission"
 
-g++ -std=c++14 -Wall ./main.cpp -o ./pb.exe 2> ./compilation.txt
+g++ -std=c++14 ./main.cpp -o ./pb.exe 2> ./compilation.txt
 
 if [[ $? != 0 ]]; then
     > current.txt
