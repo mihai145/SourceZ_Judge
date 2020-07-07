@@ -7,12 +7,12 @@ struct elem
 {
     int r,z;
 };
-elem v[1000002],w[1000002];
+elem v[4000002],w[4000002];
 struct Query
 {
     int q,x,y,k,index;
 };
-Query q[1000002];
+Query q[3000002];
 
 inline bool cmp(const Query &a,const Query &b)
 {
@@ -25,16 +25,16 @@ struct evolutie
     int x,y;
     bool t;
 };
-evolutie e[1000002];
+evolutie e[4000002];
 
 inline bool comp(const evolutie &a,const evolutie &b)
 {
     return (a.r2-a.r1)*(b.z2-b.z1)<(b.r2-b.r1)*(a.z2-a.z1);
 }
 
-int N,aib[1000002],pw,s[1002][1002][2];
-pair<int,int>sol[1000002];
-vector<pair<int,int>>c[1000002];
+int N,aib[4000002],pw,s[2002][2002][2];
+pair<int,int>sol[3000002];
+vector<pair<int,int>>c[4000002];
 
 int query(int poz)
 {
@@ -215,4 +215,3 @@ int main()
     }
     return 0;
 }
-

@@ -1,4 +1,4 @@
-    <h3 class="my-2">Enunt</h3>
+                                                                                                    <h3 class="my-2">Enunt</h3>
     <p>
         Codeforces este cea mai buna platforma online de programare. Afland acest lucru, cei mai buni programatori din tara, 
 	<a href="https://codeforces.com/profile/tourist" class="legendary"><span>A</span>lexMari</a> si 
@@ -81,10 +81,10 @@
 	<ul>
 	
 	<li>2 <= N, M <= 1 000 000 (cerinta 1)</li>
-	<li>2 <= N, M <= 1 000 (cerinta2)</li>
+	<li>2 <= N, M <= 2 000 (cerinta2)</li>
 	<li>Se garanteaza ca exista cel putin o crestere a ratingului.</li>
 	<li>Concursurile sunt date in ordine cronologica.</li>
-	<li>1 <= T<= 1 000 000</li>
+	<li>1 <= T<= 3 000 000</li>
 	<li>1 <= r, z<= 1 000 000 000</li>
 	<li>1 <= x < y <= N</li>
 	<li>1 <= k <= N * N</li>
@@ -227,3 +227,7 @@ Evolutia intre concursurile 3 si 4 era si ea mai slaba, dar e dupa ziua 9.
 
 <img src="https://cdn.discordapp.com/attachments/721378343685062686/728320873378873436/chart_crop.png" class="img-fluid my-4">
 </div>
+                    
+                    
+                    
+                    

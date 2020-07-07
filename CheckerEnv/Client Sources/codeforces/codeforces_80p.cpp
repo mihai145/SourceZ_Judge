@@ -3,16 +3,17 @@
 using namespace std;
 ifstream f("codeforces.in");
 ofstream g("codeforces.out");
+
 struct elem
 {
     int r,z;
 };
-elem v[1000002],w[1000002];
+elem v[4000002],w[4000002];
 struct Query
 {
     int q,x,y,k,index;
 };
-Query q[1000002];
+Query q[3000002];
 
 inline bool cmp(const Query &a,const Query &b)
 {
@@ -25,16 +26,16 @@ struct evolutie
     int x,y;
     bool t;
 };
-evolutie e[1000002];
+evolutie e[4000002];
 
 inline bool comp(const evolutie &a,const evolutie &b)
 {
     return (a.r2-a.r1)*(b.z2-b.z1)<(b.r2-b.r1)*(a.z2-a.z1);
 }
 
-int N,aib[1000002],s[1002][1002][2];
-pair<int,int>sol[1000002];
-vector<pair<int,int>>c[1000002];
+int N,aib[4000002],s[2002][2002][2];
+pair<int,int>sol[3000002];
+vector<pair<int,int>>c[4000002];
 
 int query(int poz)
 {
@@ -71,6 +72,7 @@ int rez(int S)
 int main()
 {
     int p,n,m,t,i,maxim=0,k=0,j,l,z;
+
     f>>p;
     f>>n;
     for(i=1;i<=n;i++)
@@ -177,7 +179,7 @@ int main()
         j=1;
         for(i=1;i<=t;i++)
         {
-            while(j<n&&v[j+1].z<=w[q[i].y].z)
+            while(j < n && v[j+1].z<=w[q[i].y].z)
             {
                 j++;
                 for(l=1;l<=j-1;l++)
