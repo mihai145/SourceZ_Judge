@@ -1,8 +1,8 @@
-                                                                                                    <h3 class="my-2">Enunt</h3>
+<h3 class="my-2">Enunt</h3>
     <p>
         Codeforces este cea mai buna platforma online de programare. Afland acest lucru, cei mai buni programatori din tara, 
 	<a href="https://codeforces.com/profile/tourist" class="legendary"><span>A</span>lexMari</a> si 
-	<a href="https://codeforces.com/profile/MiFaFaOvO" class="legendary"><span>v</span>ladutz_piele</a>, 
+	<a href="https://codeforces.com/profile/Um_Nik" class="legendary"><span>v</span>ladutz_piele</a>, 
 	s-au decis ca trebuie sa lucreze pe acest site pentru a ajunge cei mai buni din lume. 
 	Acum au obtinut cel mai respectat rang printre programatori, acela de “Legendary grandmaster”, acordat datorita ratingului lor de peste 4000.
     </p>
@@ -10,7 +10,7 @@
 	<p>
 	Pe codeforces se dau concursuri in urma carora fie iti creste ratingul, fie iti scade. 
 	Astfel, platforma tine o evidenta a concursurilor in functie de ratingul obtinut dupa un anumit concurs si ziua in care s-a dat concursul respectiv si realizeaza un grafic.
- 	Uitandu-se pe ambele grafice, <a href="https://codeforces.com/profile/tourist" class="legendary"><span>A</span>lexMari</a> si <a href="https://codeforces.com/profile/MiFaFaOvO" class="legendary"><span>v</span>ladutz_piele</a> isi pun mai multe intrebari existentiale:
+ 	Uitandu-se pe ambele grafice, <a href="https://codeforces.com/profile/tourist" class="legendary"><span>A</span>lexMari</a> si <a href="https://codeforces.com/profile/Um_Nik" class="legendary"><span>v</span>ladutz_piele</a> isi pun mai multe intrebari existentiale:
 	</p>
 
 	<p>
@@ -24,13 +24,13 @@
 	</ul>
 	
 	<p>
-	Pentru cerinta 2, cei doi analizeaza evolutiile dintre 2 concursuri(nu neaparat consecutive). <a href="https://codeforces.com/profile/MiFaFaOvO" class="legendary"><span>v</span>ladutz_piele</a> isi alege 2 concursuri x si y (x < y) la care a participat
-	si vrea sa stie daca in ziua concursului y putea sa se laude in fata lui <a href="https://codeforces.com/profile/tourist" class="legendary"><span>A</span>lexMari</a>. Astfel, <a href="https://codeforces.com/profile/MiFaFaOvO" class="legendary"><span>v</span>ladutz_piele</a> numeste o evolutie o pereche de concursuri oarecare. El vrea sa afle:
+	Pentru cerinta 2, cei doi analizeaza evolutiile dintre 2 concursuri(nu neaparat consecutive). <a href="https://codeforces.com/profile/Um_Nik" class="legendary"><span>v</span>ladutz_piele</a> isi alege 2 concursuri x si y (x < y) la care a participat
+	si vrea sa stie daca in ziua concursului y putea sa se laude in fata lui <a href="https://codeforces.com/profile/tourist" class="legendary"><span>A</span>lexMari</a>. Astfel, <a href="https://codeforces.com/profile/Um_Nik" class="legendary"><span>v</span>ladutz_piele</a> numeste o evolutie o pereche de concursuri oarecare. El vrea sa afle:
 	</p>
 	
 	<ul>
 	<li>cate evolutii strict mai slabe decat evolutia lui dintre x si y a avut <a href="https://codeforces.com/profile/tourist" class="legendary"><span>A</span>lexMari</a> in concursurile pana in ziua y inclusiv</li>
-	<li>intre ce concursuri a avut <a href="https://codeforces.com/profile/tourist" class="legendary"><span>A</span>lexMari</a> a k-a cea mai slaba evolutie dintre acelea strict mai slabe decat evolutia lui <a href="https://codeforces.com/profile/MiFaFaOvO" class="legendary"><span>v</span>ladutz_piele</a> dintre concursurile x si y pana in ziua concursului y inclusiv</li>
+	<li>intre ce concursuri a avut <a href="https://codeforces.com/profile/tourist" class="legendary"><span>A</span>lexMari</a> a k-a cea mai slaba evolutie dintre acelea strict mai slabe decat evolutia lui <a href="https://codeforces.com/profile/Um_Nik" class="legendary"><span>v</span>ladutz_piele</a> dintre concursurile x si y pana in ziua concursului y inclusiv</li>
 	</ul>
 
 	<p>
@@ -51,9 +51,9 @@
 	<li>pe prima linie numarul p, reprezentand cerinta (1 sau 2)</li>
 	<li>pe a 2-a linie se va afla N (numarul de concursuri date de <a href="https://codeforces.com/profile/tourist" class="legendary"><span>A</span>lexMari</a>)</li>
 	<li>pe urmatoarele N linii se vor afla cate 2 numere r si z reprezentand ca <a href="https://codeforces.com/profile/tourist" class="legendary"><span>A</span>lexMari</a> a obtinut ratingul r la concursul din ziua z</li>
-	<li>pe urmatoarea linie se afla M (numarul de concursuri date de <a href="https://codeforces.com/profile/MiFaFaOvO" class="legendary"><span>v</span>ladutz_piele</a>)</li>
-	<li>pe urmatoarele M linii se vor afla cate 2 numere r si z reprezentand ca <a href="https://codeforces.com/profile/MiFaFaOvO" class="legendary"><span>v</span>ladutz_piele</a> a obtinut ratingul r la concursul din ziua z</li>
-	<li>daca p=2, atunci pe urmatoarea linie se afla numarul T – numarul de intrebari, iar pe urmatoarele T linii se afla q x y daca q=1, sau q x y k daca q=2, unde q reprezinta tipul intrebarii (prima sau a doua), x si y reprezinta indicii concursurilor alese din graficul lui <a href="https://codeforces.com/profile/MiFaFaOvO" class="legendary"><span>v</span>ladutz_piele</a>, iar k are semnificatia din enunt</li>
+	<li>pe urmatoarea linie se afla M (numarul de concursuri date de <a href="https://codeforces.com/profile/Um_Nik" class="legendary"><span>v</span>ladutz_piele</a>)</li>
+	<li>pe urmatoarele M linii se vor afla cate 2 numere r si z reprezentand ca <a href="https://codeforces.com/profile/Um_Nik" class="legendary"><span>v</span>ladutz_piele</a> a obtinut ratingul r la concursul din ziua z</li>
+	<li>daca p=2, atunci pe urmatoarea linie se afla numarul T – numarul de intrebari, iar pe urmatoarele T linii se afla q x y daca q=1, sau q x y k daca q=2, unde q reprezinta tipul intrebarii (prima sau a doua), x si y reprezinta indicii concursurilor alese din graficul lui <a href="https://codeforces.com/profile/Um_Nik" class="legendary"><span>v</span>ladutz_piele</a>, iar k are semnificatia din enunt</li>
 	</ul>
 
     <hr>
@@ -146,8 +146,8 @@ AlexMari
 In zilele 2, 3 si 9 nu participa amandoi la concursuri
 <br>
 <br>
-In ziua 6 <a href="https://codeforces.com/profile/tourist" class="legendary"><span>A</span>lexMari</a> are o crestere de 150, iar <a href="https://codeforces.com/profile/MiFaFaOvO" class="legendary"><span>v</span>ladutz_piele</a>
- de doar 60, iar in ziua 8 <a href="https://codeforces.com/profile/tourist" class="legendary"><span>A</span>lexMari</a> are o crestere de 300, iar <a href="https://codeforces.com/profile/MiFaFaOvO" class="legendary"><span>v</span>ladutz_piele</a>
+In ziua 6 <a href="https://codeforces.com/profile/tourist" class="legendary"><span>A</span>lexMari</a> are o crestere de 150, iar <a href="https://codeforces.com/profile/Um_Nik" class="legendary"><span>v</span>ladutz_piele</a>
+ de doar 60, iar in ziua 8 <a href="https://codeforces.com/profile/tourist" class="legendary"><span>A</span>lexMari</a> are o crestere de 300, iar <a href="https://codeforces.com/profile/Um_Nik" class="legendary"><span>v</span>ladutz_piele</a>
  de 150, deci <a href="https://codeforces.com/profile/tourist" class="legendary"><span>A</span>lexMari</a> castiga ambele concursuri.
 
                     </th>
@@ -208,13 +208,13 @@ In ziua 6 <a href="https://codeforces.com/profile/tourist" class="legendary"><sp
 
 		<th>
 Evolutia intre concursurile 1 si 2 a lui <a href="https://codeforces.com/profile/tourist" class="legendary"><span>A</span>lexMari</a> este singura mai slaba pana in ziua 6 decat cea intre concursurile 2 si 3 ale lui
- <a href="https://codeforces.com/profile/MiFaFaOvO" class="legendary"><span>v</span>ladutz_piele</a>
+ <a href="https://codeforces.com/profile/Um_Nik" class="legendary"><span>v</span>ladutz_piele</a>
 <br>
 <br>
-Nu exista nicio evolutie mai slaba a lui <a href="https://codeforces.com/profile/tourist" class="legendary"><span>A</span>lexMari</a> decat cea a lui <a href="https://codeforces.com/profile/MiFaFaOvO" class="legendary"><span>v</span>ladutz_piele</a> intre concursurile 1 si 2
+Nu exista nicio evolutie mai slaba a lui <a href="https://codeforces.com/profile/tourist" class="legendary"><span>A</span>lexMari</a> decat cea a lui <a href="https://codeforces.com/profile/Um_Nik" class="legendary"><span>v</span>ladutz_piele</a> intre concursurile 1 si 2
 <br>
 <br>
-Sunt doua evoultii mai slabe pana in ziua 9 ale lui <a href="https://codeforces.com/profile/tourist" class="legendary"><span>A</span>lexMari</a> decat cele ale lui <a href="https://codeforces.com/profile/MiFaFaOvO" class="legendary"><span>v</span>ladutz_piele</a> intre concursurile 1 si 4 (460 in 6 zile): 1 si 2 (150 in 4 zile), respectiv 1 si 3 (450 in 6 zile)
+Sunt doua evoultii mai slabe pana in ziua 9 ale lui <a href="https://codeforces.com/profile/tourist" class="legendary"><span>A</span>lexMari</a> decat cele ale lui <a href="https://codeforces.com/profile/Um_Nik" class="legendary"><span>v</span>ladutz_piele</a> intre concursurile 1 si 4 (460 in 6 zile): 1 si 2 (150 in 4 zile), respectiv 1 si 3 (450 in 6 zile)
 <br>
 <br>
 Evolutia intre concursurile 3 si 4 era si ea mai slaba, dar e dupa ziua 9.
@@ -227,7 +227,3 @@ Evolutia intre concursurile 3 si 4 era si ea mai slaba, dar e dupa ziua 9.
 
 <img src="https://cdn.discordapp.com/attachments/721378343685062686/728320873378873436/chart_crop.png" class="img-fluid my-4">
 </div>
-                    
-                    
-                    
-                    
