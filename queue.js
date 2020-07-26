@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const Submission = require("./models/submission");
 const User = require("./models/user");
 const Problem = require("./models/problem");
+const Registration = require('./models/registration');
 
 const shell = require("shelljs");
 const fs = require("fs");
@@ -79,41 +80,71 @@ async function processLineByLine(submId) {
             judging = false;
         } else {
 
-            if(verdict === "Accepted") {
-                Problem.findOne({name: subm.toProblem}, (err, pb) => {
-                    pb.totalSubmissions += 1;
-                    pb.acceptedSubmissions += 1;
-                    pb.save();
-                });
-                User.findOne({username: subm.author}, (err, user) => {
-                    if(err || !user) {
-                        ///nothing to worry
+            if(!subm.toContest || subm.toContest === "") {
+                ///OLD ARCHIVE MODE SUBMISSION
+                if (verdict === "Accepted") {
+                    Problem.findOne({ name: subm.toProblem }, (err, pb) => {
+                        pb.totalSubmissions += 1;
+                        pb.acceptedSubmissions += 1;
+                        pb.save();
+                    });
+                    User.findOne({ username: subm.author }, (err, user) => {
+                        if (err || !user) {
+                            ///nothing to worry
+                            judging = false;
+                        } else {
+                            let solved = false;
+
+                            for (let pb of user.solvedProblems) {
+                                if (pb == subm.toProblem) {
+                                    solved = true;
+                                }
+                            }
+
+                            if (!solved) {
+                                user.rating += 100;
+                                user.solvedProblems.push(subm.toProblem);
+                                user.save();
+                            }
+
+                            judging = false;
+                        }
+                    });
+                } else {
+                    Problem.findOne({ name: subm.toProblem }, (err, pb) => {
+                        pb.totalSubmissions += 1;
+                        pb.save();
+                    });
+
+                    judging = false;
+                }
+            } else {
+                Registration.findOne({contestant: subm.author, contest: subm.toContest}, (err, reg) => {
+                    if(err || !reg) {
                         judging = false;
                     } else {
-                        let solved = false;
-
-                        for (let pb of user.solvedProblems) {
-                            if(pb == subm.toProblem) {
-                                solved = true;
+                        console.log(subm.toProblem);
+                        if(subm.pbInContest == 1) {
+                            if(reg.p1_score < scr) {
+                                reg.total_score += (scr - reg.p1_score);
+                                reg.p1_score = scr;
+                                reg.save();
+                                judging = false;
+                            } else {
+                                judging = false;
+                            }
+                        } else {
+                            if (reg.p2_score < scr) {
+                                reg.total_score += (scr - reg.p2_score);
+                                reg.p2_score = scr;
+                                reg.save();
+                                judging = false;
+                            } else {
+                                judging = false;
                             }
                         }
-
-                        if(!solved) {
-                            user.rating += 100;
-                            user.solvedProblems.push(subm.toProblem);
-                            user.save();
-                        }
-
-                        judging = false;
                     }
                 });
-            } else {
-                Problem.findOne({name: subm.toProblem}, (err, pb) => {
-                    pb.totalSubmissions += 1;
-                    pb.save();
-                });
-
-                judging = false;
             }
         }
     });
