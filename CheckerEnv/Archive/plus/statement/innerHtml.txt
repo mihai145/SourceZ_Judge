@@ -7,7 +7,7 @@
 
     <h3 class="my-2">Input format</h3>
     <p>
-        File adunare.in contains, on the first line, two numbers, A and B.
+        File plus.in contains, on the first line, two numbers, A and B.
     </p>
 
     <hr>
@@ -30,8 +30,8 @@
     <table class="table table-bordered">
         <thead>
             <tr>
-                <th scope="col"> adunare.in</th>
-                <th scope="col"> adunare.out</th>
+                <th scope="col"> plus.in</th>
+                <th scope="col"> plus.out</th>
             </tr>
         </thead>
         <tbody>

@@ -1,10 +1,9 @@
 #include <fstream>
-#include <iostream>
 
 using namespace std;
 
-ifstream cin1("adunare.out");
-ifstream cin2("adunare.ok");
+ifstream cin1("aliens.out");
+ifstream cin2("aliens.ok");
 
 int main()
 {

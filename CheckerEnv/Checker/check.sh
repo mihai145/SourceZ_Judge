@@ -116,6 +116,9 @@ rm main.cpp
 rm pb.exe
 rm chk.cpp
 rm chk.exe
+rm ${pb}.in
+rm ${pb}.out
+rm ${pb}.ok
 
 echo "Deleted client source & exec and checker & exec"
 
