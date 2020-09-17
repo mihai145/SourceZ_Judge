@@ -81,8 +81,8 @@ int main()
                 problems.push_back(x);
             }
 
-            for(int i = 1; i < K; i++)
-                Join(problems[0], problems[1]);
+            for(int j = 1; j < K; j++)
+                Join(problems[0], problems[j]);
 
             dim[Root(problems[0])]++;
             ans = max(ans, dim[Root(problems[0])]);
