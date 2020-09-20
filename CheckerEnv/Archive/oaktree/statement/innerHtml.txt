@@ -1,0 +1,131 @@
+<h3 class="my-2">Enunt</h3>
+    <p>
+        Evolutia tehnologiei a afectat profund viata societatii. Pe vremuri, parcurile erau impanzite de stejari falnici, la umbra carora stateau oameni de toate varstele. Acum, singurii stejari ramasi sunt grafurile conexe aciclice (bineinteles neorientate). Un stejar cu N noduri poate avea una dintre urmatoarele forme:
+    </p>
+
+	<ul>
+<li>
+daca N = 1, stejarul are un singur nod (radacina)
+</li>
+<li>
+daca N = 2, stejarul are 2 noduri conectate (radacina si unicul fiu)
+</li>
+<li>
+daca N > 2, stejarul se va construi recursiv in 2 moduri:
+	<ol>
+<li>
+radacina are 2 fii, fiul stang este radacina unui stejar cu N – 2 noduri, iar fiul drept este un subarbore de dimensiune 1
+</li>
+<li>
+radacina are un singur fiu, acesta fiind radacina unui stejar cu N – 1 noduri
+</li>
+	</ol>
+</li>
+	</ul>
+
+<p>
+Mihaita, curios din fire, observa diferitele caracteristici ale acestori stejari: forma, inaltimea si, bineinteles, varsta lor. El isi pune urmatoarele intrebari:
+</p>
+<ol>
+<li>Care este inaltimea minima a unui stejar cu N noduri?</li>
+<li>Care este numarul stejarilor cu exact N noduri?</li>
+<li>Care este numarul stejarilor cu cel mult N noduri?</li>
+</ol>
+
+<p>
+Ajutati-l pe Mihaita sa raspunda la aceste intrebari!
+</p>
+
+    <hr>
+
+    <h3 class="my-2">Format intrare</h3>
+    <p>
+        Pe prima linie se va afla numarul N. Pe a doua linie se vor afla unul din numerele 1, 2, sau 3, semnificand tipul intrebarii lui Mihaita.
+    </p>
+
+    <hr>
+
+    <h3 class="my-2">Format iesire</h3>
+    <p>
+        Se va afisa un singur numar: inaltimea maxima a unui stejar cu N noduri (daca tipul intrebarii a fost 1), numarul stejarilor cu exact N noduri (daca tipul intrebarii a fost 2), respectiv numarul stejarilor cu cel mult N noduri (daca tipul intrebarii a fost 3).
+    </p>
+<p>
+Raspunsurile la toate cele 3 tipuri de intrebari pot fi destul de mari, asa ca se vor afisa modulo 10^9 + 7.
+</p>
+
+    <hr>
+
+    <h3 class="my-2">Restrictii si precizari</h3>
+    <ul>
+
+<li>
+N <= 10^15
+</li>
+<li>
+Pentru 30 de puncte, tipul intrebarii va fi 1
+</li>
+<li>
+Pentru 30 de puncte, tipul intrebarii va fi 2
+</li>    
+<li>
+Pentru 40 de puncte, tipul intrebarii va fi 3
+</li>
+</ul>
+
+    <hr>
+
+    <h3 class="mt-3">Exemple</h3>
+    <table class="table table-bordered" style="text-align: left;">
+        <thead>
+            <tr>
+                <th scope="col"> oaktree.in</th>
+                <th scope="col"> oaktree.out</th>
+		        <th scope="col"> Explicatie</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th>
+2
+<br>
+1
+
+                </th>
+                <th style="text-align: center;">
+                    2
+                </th>
+<th>
+Exista un singur stejar cu 2 noduri, si are inaltimea 2.
+</th>
+            </tr
+
+<tr>
+                <th>
+3
+<br>
+2
+<th>
+2
+</th>
+<th>
+<p>
+Exista 2 stejari cu 3 noduri, avand formele din imagine:
+</p>
+<br>
+<img src="https://cdn.discordapp.com/attachments/491685007698427925/756191934967709787/unknown.png" alt="">
+</th>
+</tr>
+<tr>
+<th>
+4
+<br>
+3
+</th>
+<th>
+7
+</th>
+<th>
+</th>
+</tr>
+        </tbody>
+    </table>
