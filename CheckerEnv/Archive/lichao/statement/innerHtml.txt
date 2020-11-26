@@ -1,0 +1,142 @@
+<h3 class="my-2">Enunt</h3>
+    <p>
+        Ana si Bogdan joaca T jocuri independente de “LiChao”. 
+Intr-un joc, acestia incep cu o gramada de N pietre. 
+Ana si Bogdan vor efectua alternativ mutari, Ana efectuand de fiecare data prima mutare. 
+O mutare consta in eliminarea unor pietre din gramada. 
+Deoarece Ana si Bogdan s-au plictisit de monotonia acestor jocuri cu pietre, ei stabilesc doua reguli inaintea tuturor jocurilor. 
+Ei vor alege un numar K intre 1 si N. 
+Apoi, vor caracteriza numerele de la 1 la K in numere “comune” si numere “speciale”. 
+Astfel, la fiecare mutare, jucatorul va putea elimina un numar de pietre mai mic sau egal cu K. 
+Mai mult decat atat, daca in cadrul unui joc, Ana sau Bogdan elimina un numar de pietre care a fost caracterizat ca fiind “special”, o cantitate de pietre egala cu acest numar nu va mai putea fi eliminata in cadrul aceluiasi joc. Va pierde jucatorul care nu mai poate face o miscare valida.
+    </p>
+
+	<p>
+Se cere sa afisati un sir binar de lungime T cu urmatoarea semnificatie: al i –lea caracter este “1” daca Ana are o strategie sigura de castig in meciul i, sau “0” daca Ana nu are o strategie sigura de castig in meciul i.
+	</p>
+
+    <hr>
+
+    <h3 class="my-2">Date de intrare</h3>
+
+        <p>
+	Fisierul de intrare se va numi "lichao.in".	
+	</p>
+
+	<ul>
+	<li>Pe prima linie se va afla T – numarul de jocuri de “LiChao” disputate intre cei doi</li>
+	<li>Pe a doua linie se va afla K – numarul maxim de pietre ce pot fi extrase dintr-o gramada in cadrul unei mutari</li>
+	<li>Pe a treia linie se vor afla K numere separate printr-un spatiu : al i-lea numar va fi “0” daca i este caracterizat ca fiind “comun”, sau “1” daca i este caracterizat ca fiind “special”</li>
+	<li>Pe fiecare linie dintre urmatoarele T linii se va afla un singur numar N – dimensiunea gramezii initiale de pietre pentru jocul respectiv</li>
+	</ul>
+
+    <hr>
+
+    <h3 class="my-2">Date de iesire</h3>
+    <p>
+	Fisierul de iesire se va numi "lichao.out". 
+	<br>
+	Se vor afisa T numere separate printr-un spatiu. Al i-lea numar va fi “1” daca Ana are strategie sigura de castig pentru meciul i, sau “0” daca Ana nu are strategie sigura de castig pentru meciul i.
+    </p>
+
+
+    <hr>
+
+    <h3 class="my-2">Restrictii</h3>
+    	
+	<ul>
+	
+	<li>1 <= T <= 100</li>
+	<li>1 <= K <= 30</li>
+	<li>K <= N <= 30</li>
+	<li>Subtask: pentru 30 de puncte, toate cele K numere vor fi caracterizate drept “comune”</li>
+
+	</ul>
+
+    <hr>
+
+<div class="d-none d-md-block"> 
+    <h3 class="mt-3">Exemplu</h3>
+        <table class="table table-bordered" style="text-align: left">
+            <thead>
+                    <tr>
+                        <th scope="col"> lichao.in </th>
+                        <th scope="col"> lichao.out </th>
+			<th scope="col"> Explicatie </th>
+                    </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th>
+                         2
+<br>
+3
+<br>
+1 0 0
+<br>
+5
+<br>
+2
+
+                    </th>
+
+                    <th style="text-align: center;">
+0 1
+		    </th>
+<th>
+Avem T=2 jocuri.
+<br>
+<br>
+Putem extrage maxim K=3 pietre la fiecare mutare. Numarul 1 este “special”, iar numerele 2 si 3 sunt “comune”.
+<br>
+<br>
+In primul joc, se incepe cu 5 pietre. Ana nu are strategie de castig pentru acest joc. 
+<br>
+<br>
+Daca la prima mutare Ana extrage 1 piatra, atunci Bogdan va extrage 3. Va ramane o singura piatra in gramada, iar Ana nu o va putea extrage, deoarece 1 este “special” si deja s-a efectuat o extragere de 1 piatra. 
+<br>
+<br>
+Daca la prima mutare Ana extrage 2 pietre, Bogdan va extrage 3 pietre; daca la prima mutare Ana extrage 3 pietre, Bogdan va extrage 2 pietre.
+<br>
+<br>
+In orice caz, Ana nu are strategie sigura de castig.
+<br>
+<br>
+In al doilea joc, se incepe cu 2 pietre. Ana le poate extrage pe amandoua, castigand automat.
+
+                    </th>
+                </tr>
+
+		<tr>
+		
+		<th>
+5
+<br>
+5
+<br>
+1 0 1 0 1
+<br>
+10
+<br>
+15
+<br>
+8
+<br>
+7
+<br>
+20
+
+		</th>
+
+		<th style="text-align: center;">
+1 1 1 0 1
+		</th>
+
+		<th>
+
+		</th>	
+	
+            </tbody>
+            </table>
+
+</div>
