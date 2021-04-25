@@ -1,7 +1,63 @@
 #include<fstream>
 #include<algorithm>
 using namespace std;
-ifstream f("codeforces.in");
+class InParser {
+private:
+	FILE *fin;
+	char *buff;
+	int sp;
+
+	char read_ch() {
+		++sp;
+		if (sp == 4096) {
+			sp = 0;
+			fread(buff, 1, 4096, fin);
+		}
+		return buff[sp];
+	}
+
+public:
+	InParser(const char* nume) {
+		fin = fopen(nume, "r");
+		buff = new char[4096]();
+		sp = 4095;
+	}
+
+	InParser& operator >> (int &n) {
+		char c;
+		while (!isdigit(c = read_ch()) && c != '-');
+		int sgn = 1;
+		if (c == '-') {
+			n = 0;
+			sgn = -1;
+		} else {
+			n = c - '0';
+		}
+		while (isdigit(c = read_ch())) {
+			n = 10 * n + c - '0';
+		}
+		n *= sgn;
+		return *this;
+	}
+
+	InParser& operator >> (long long &n) {
+		char c;
+		n = 0;
+		while (!isdigit(c = read_ch()) && c != '-');
+		long long sgn = 1;
+		if (c == '-') {
+			n = 0;
+			sgn = -1;
+		} else {
+			n = c - '0';
+		}
+		while (isdigit(c = read_ch())) {
+			n = 10 * n + c - '0';
+		}
+		n *= sgn;
+		return *this;
+	}
+};
 ofstream g("codeforces.out");
 struct elem
 {
@@ -77,6 +133,7 @@ int rez(int S)
 
 int main()
 {
+    InParser f("codeforces.in");
     int p,n,m,t,i,maxim=0,k=0,j,l,z;
     f>>p;
     f>>n;
