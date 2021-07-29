@@ -9,7 +9,7 @@
   "author": "mihai145",
   "license": "ISC",
   "dependencies": {
-    "mongoose": "^5.12.14",
+    "mongoose": "^5.13.4",
     "passport-local-mongoose": "^6.1.0",
     "shelljs": "^0.8.4"
   }
